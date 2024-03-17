@@ -2,3 +2,36 @@
 margin: 0;
 padding: 0;
 }
+.mainBody{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: black;
+    background-image: url("../src/Assets/Images/bg.jpg");
+    background-position: center;
+    background-color: #f4f4f4;
+}
+.absoluteFix{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+.mainContainer{
+  z-index: 1;
+  background-color: #a3a2a823;
+  backdrop-filter: blur(20px);
+  height: 82vh;
+  width: 80%;
+  border-radius: 8px;
+  border: 1px solid #a3a2a8;
+  box-shadow: rgba(149, 157, 165, 0.179) 0px 8px 24px;
+
+}
