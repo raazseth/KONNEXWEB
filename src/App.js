@@ -43,7 +43,9 @@ function App() {
           },${IpAPIRes?.data?.country || "UK"}?key=VH7M2ZKTME5HQLU9RZ6DV9NZL`
         );
         setweather(res.data);
-      } catch (error) {}
+      } catch (error) {
+        console.error("Error fetching weather:", error);
+      }
     };
     fetchWeather();
   }, []);
