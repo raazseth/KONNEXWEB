@@ -37,12 +37,12 @@ function App() {
             "Access-Control-Allow-Origin": "*",
           },
         });
-        if (IpAPIRes) {
-          const res = await axios.get(
-            `https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/${IpAPIRes.data.city},${IpAPIRes.data.country}?key=VH7M2ZKTME5HQLU9RZ6DV9NZL`
-          );
-          setweather(res.data);
-        }
+        const res = await axios.get(
+          `https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/${
+            IpAPIRes?.data?.city || "London"
+          },${IpAPIRes?.data?.country || "UK"}?key=VH7M2ZKTME5HQLU9RZ6DV9NZL`
+        );
+        setweather(res.data);
       } catch (error) {}
     };
     fetchWeather();
