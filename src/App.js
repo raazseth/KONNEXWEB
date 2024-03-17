@@ -32,7 +32,11 @@ function App() {
     const fetchWeather = async () => {
       try {
         const IPAPi = "http://ip-api.com/json/";
-        const IpAPIRes = await axios.get(IPAPi);
+        const IpAPIRes = await axios.get(IPAPi, {
+          headers: {
+            "Access-Control-Allow-Origin": "*",
+          },
+        });
         if (IpAPIRes) {
           const res = await axios.get(
             `https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/${IpAPIRes.data.city},${IpAPIRes.data.country}?key=VH7M2ZKTME5HQLU9RZ6DV9NZL`
@@ -157,7 +161,7 @@ function App() {
     "#4caf50",
     "#ff5252",
     "#4077fe",
-    data?.led,
+    data?.led && data?.led,
   ];
 
   const uniqueColorsSet = new Set(colors);

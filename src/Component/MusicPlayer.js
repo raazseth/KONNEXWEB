@@ -123,7 +123,6 @@ const MusicPlayer = () => {
           ref={audioRef}
           autoPlay
           loop
-          muted
           style={{
             display: "none",
           }}
