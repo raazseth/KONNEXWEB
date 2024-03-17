@@ -11,6 +11,7 @@ padding: 0;
     background-image: url("../src/Assets/Images/bg.jpg");
     background-position: center;
     background-color: #f4f4f4;
+    background-size: contain;
 }
 .absoluteFix{
     position: absolute;
@@ -27,11 +28,15 @@ padding: 0;
 .mainContainer{
   z-index: 1;
   background-color: #a3a2a823;
-  backdrop-filter: blur(20px);
-  height: 82vh;
+  backdrop-filter: blur(12px);
+  height: 92vh;
   width: 80%;
   border-radius: 8px;
-  border: 1px solid #a3a2a8;
+  /* border: 1px solid #a3a2a8; */
   box-shadow: rgba(149, 157, 165, 0.179) 0px 8px 24px;
 
+}
+.mainContainer:hover{
+  transition: .5s ease-in-out;
+  border: 1px solid #a3a2a8;
 }
