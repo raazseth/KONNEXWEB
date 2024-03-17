@@ -6,11 +6,20 @@ const TEAM_ID = "IhceXG2";
 
 export const sendDeviceControlRequest = async (device, value) => {
   try {
-    const response = await axios.post(`${BASE_URL}`, {
-      teamid: TEAM_ID,
-      device: device,
-      value: value,
-    });
+    const response = await axios.post(
+      `${BASE_URL}`,
+      {
+        teamid: TEAM_ID,
+        device: device,
+        value: value,
+      },
+      {
+        headers: {
+          "Content-Type": "application/json",
+          "Access-Control-Allow-Origin": "*",
+        },
+      }
+    );
     return response.data;
   } catch (error) {
     console.error("Error:", error);
@@ -20,7 +29,12 @@ export const sendDeviceControlRequest = async (device, value) => {
 
 export const getDeviceStatus = async () => {
   try {
-    const response = await axios.get(`${BASE_URL}${TEAM_ID}`);
+    const response = await axios.get(`${BASE_URL}${TEAM_ID}`, {
+      headers: {
+        "Content-Type": "application/json",
+        "Access-Control-Allow-Origin": "*",
+      },
+    });
     return response.data;
   } catch (error) {
     console.error("Error:", error);

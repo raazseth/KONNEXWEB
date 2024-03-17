@@ -17,16 +17,16 @@ function App() {
   const [currentPage, setcurrentPage] = useState("Living Room");
   const [data, setdata] = useState(null);
   const [isBulb, setisBulb] = useState(false);
-  const [hsva, setHsva] = useState({ h: 214, s: 43, v: 90, a: 1 });
-  const [makeAlert, setmakeAlert] = useState({
-    isOpen: true,
-    message: "Device Status Updated!",
-  });
   const [isLoading, setisLoading] = useState(true);
   const [fanSpeed, setfanSpeed] = useState(0);
   const [acSpeed, setacSpeed] = useState(17);
   const [isAc, setisAc] = useState(false);
   const [weather, setweather] = useState(null);
+  const [hsva, setHsva] = useState({ h: 214, s: 43, v: 90, a: 1 });
+  const [makeAlert, setmakeAlert] = useState({
+    isOpen: true,
+    message: "Device Status Updated!",
+  });
 
   useEffect(() => {
     const fetchWeather = async () => {
@@ -48,7 +48,7 @@ function App() {
       }
     };
     fetchWeather();
-  }, []);
+  }, [weather, isLoading]);
 
   const fetchStatus = async () => {
     try {
